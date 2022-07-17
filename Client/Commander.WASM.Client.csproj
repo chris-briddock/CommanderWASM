@@ -6,14 +6,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Commander.WASM' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Commander.WASM' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.7" PrivateAssets="all" />
+    <PackageReference Include="MudBlazor" Version="6.0.11" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\Commander.WASM.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="MudBlazor" />
+  </ItemGroup>
 </Project>

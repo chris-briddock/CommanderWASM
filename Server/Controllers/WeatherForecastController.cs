@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Commander.WASM.Shared;
+using Commander.WASM.Server.Data;
 
 namespace Commander.WASM.Server.Controllers;
 
@@ -30,5 +31,6 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
+
 }
 

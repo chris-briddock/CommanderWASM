@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.ResponseCompression;
+﻿using Commander.WASM.Server.Data;
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddScoped<ICommandRepo, CommandRepo>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
 
 var app = builder.Build();
 
